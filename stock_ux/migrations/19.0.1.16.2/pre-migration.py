@@ -12,7 +12,7 @@ def migrate(cr, version):
            SET active = FALSE
          WHERE view.active
            AND (
-                view.arch_db::text ~ '(vouchers|book_id|voucher_required|book_required|voucher_number_unique)'
+                view.arch_db::text ~ '(vouchers|book_id|voucher_required|book_required|voucher_number_unique|dispatch_number)'
                 OR EXISTS (
                     SELECT 1
                       FROM ir_model_data AS data

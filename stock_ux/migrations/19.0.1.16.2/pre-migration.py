@@ -18,7 +18,7 @@ def migrate(cr, version):
                       FROM ir_model_data AS data
                      WHERE data.model = 'ir.ui.view'
                        AND data.res_id = view.id
-                       AND data.module = 'stock_voucher'
+                       AND data.module IN ('stock_voucher', 'l10n_ar_stock_ux')
                 )
            )
         """

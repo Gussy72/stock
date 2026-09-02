@@ -5,7 +5,7 @@ _logger = logging.getLogger(__name__)
 
 
 def migrate(cr, version):
-    """Disable legacy stock voucher views before validating stock views."""
+    """Disable remaining legacy stock voucher views before validation."""
     cr.execute(
         """
         UPDATE ir_ui_view AS view
@@ -23,4 +23,4 @@ def migrate(cr, version):
            )
         """
     )
-    _logger.info("Disabled %s legacy stock voucher views", cr.rowcount)
+    _logger.info("Disabled %s remaining legacy stock voucher views", cr.rowcount)
